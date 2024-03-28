@@ -27,8 +27,15 @@ Node * createNode(void * data) {
     new->next = NULL;
     return new;
 }
-
-List * createList() {
+/*Programe la función List* createList(), la cual retorna el puntero del tipo de dato List con sus valores inicializados en NULL.
+  Recuerda reservar memoria al puntero usando malloc o calloc.*/
+List * createList() 
+{
+     List * new = (List *)malloc(sizeof(List));
+     assert(new != NULL);
+     new->head = NULL;
+     new->tail = NULL;
+     new->current = NULL;
      return NULL;
 }
 
