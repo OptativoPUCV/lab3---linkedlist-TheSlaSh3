@@ -67,12 +67,32 @@ void * nextList(List * list)
     return list->current->data;
 }
 
-void * lastList(List * list) {
-    return NULL;
+/*Programe las funciones void * lastList(List * list) y void * prevList(List * list).
+
+  La primera retorna el dato del último elemento en la lista y actualiza el current al nodo correspondiente.
+  La segunda función retorna el dato del nodo anterior a current y actualiza el current para que apunte a ese nodo.*/
+void * lastList(List * list) 
+{
+    if(list->tail == NULL)
+    {
+        return NULL;
+    }
+    list->current = list->tail;
+    return list->tail->data;
 }
 
-void * prevList(List * list) {
-    return NULL;
+void * prevList(List * list) 
+{
+    if(list->current == NULL)
+    {
+        return NULL;
+    }
+    if(list->current->prev == NULL)
+    {
+        return NULL;
+    }
+    list->current = list->current->prev;
+    return list->current->data;
 }
 
 void pushFront(List * list, void * data) {
@@ -96,7 +116,9 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-void * popCurrent(List * list) {
+void * popCurrent(List * list) 
+{
+  
     return NULL;
 }
 
